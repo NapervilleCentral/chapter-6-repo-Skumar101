@@ -98,7 +98,7 @@ public static void main (String[] args)
 
     // make a 2d array with an iniitalizer list.
     //print the length of row and col
-/*
+/**/
     int [][] scores = { {1,2,3},//6
                         {2,2,3},//7
                         {3,2,3},//8
@@ -113,15 +113,13 @@ public static void main (String[] args)
     System.out.print("The sum of this array is" );
 
     //sum a row of 2D array
-    System.out.print("The sum of row "));
+    System.out.print("The sum of row ");
 
 
 
 
 
 
-
-/**/
 }// end of main
 
    public static int[] doubleSize(int[] array)
