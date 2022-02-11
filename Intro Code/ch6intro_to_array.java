@@ -21,7 +21,7 @@ public class ch6intro_to_array
 public static void main (String[] args)
 {
 
-/**/
+/*
         mathy useful = new mathy();
         int x = 50;
         int[] num = new int[20];
@@ -103,20 +103,42 @@ public static void main (String[] args)
                         {2,2,3},//7
                         {3,2,3},//8
                         {4,2,3}    };//9
-
+    mathy.print2D(scores);
+    System.out.println(scores[2][1]);
     //how many columns
     System.out.println(scores[0].length+"col");
     //how many rows
     System.out.println(scores.length+"row");
-
+    int arraySum = 0;
+    for(int r = 0; r<scores.length; r++)
+    {
+        for(int c = 0; c<scores[r].length; c++)
+        {
+            arraySum+= scores[r][c];
+        }
+    }
     //sum entire 2D array
-    System.out.print("The sum of this array is" );
-
+    System.out.println("The sum of this array is "+arraySum);
     //sum a row of 2D array
-    System.out.print("The sum of row ");
-
-
-
+    int sum2 = 0;
+    for(int c = 0; c<scores[2].length; c++)
+    {
+        sum2+= scores[2][c];
+    }
+    System.out.println("The sum of row 2 is "+sum2);
+    //sum of last coloumn
+    int sum3 = 0;
+    for(int r = 0; r<scores.length; r++)
+    {
+        sum3+= scores[r][scores[0].length-1];
+    }
+    System.out.println("The sum of last coloumn is "+sum3);
+    
+    int [][] Latin = mathy.latinSq(3);
+    mathy.print2D(Latin);
+    
+    Latin = mathy.latinSq(6);
+    mathy.print2D(Latin);
 
 
 
@@ -158,7 +180,7 @@ public static void main (String[] args)
 
    }// end of odd
 
-	/*  */
+    /*  */
 }// end of class
 
 

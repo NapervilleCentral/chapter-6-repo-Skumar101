@@ -2,7 +2,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 //import cs1.Keyboard;
 //import javax.swing.*;
-
 public class mathy
 {
     private int [][] square;
@@ -24,6 +23,21 @@ public class mathy
     }
     
     /**
+     * prints the 2D array so it is readable row by coloumn
+     * @param int[][]
+     */
+    public static void print2D(int[][] arr)
+    {
+        for(int r=0; r<arr.length; r++)
+        {
+            for(int c = 0; c<arr[r].length; c++)
+            {
+                System.out.print(arr[r][c]+" ");
+            }
+            System.out.println();
+        }
+    }
+    /**
      * Creates and populates an array with random values
      * @param size - the number of random values 
      * @param range - the range of random values from 1 to range (1, range)
@@ -33,8 +47,21 @@ public class mathy
     {
         return new int[10];
     }
-
-
+    /**
+     * will produce a latin square
+     * @param int of size
+     * @return the latin square
+     */
+    public static int latinSq(int size)
+    {
+        int arr[][] = new int[size][size];
+        int count = 1;
+          for(int r = 0; r<arr.length; r++)
+        {
+            arr[0][r] = 1+r;
+            count++;
+        }
+    }
     /**
         take the absoulute value of the number
         @param int value
