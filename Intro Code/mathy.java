@@ -52,15 +52,23 @@ public class mathy
      * @param int of size
      * @return the latin square
      */
-    public static int latinSq(int size)
+    public static int[][] latinSq(int size)
     {
         int arr[][] = new int[size][size];
-        int count = 1;
           for(int r = 0; r<arr.length; r++)
         {
             arr[0][r] = 1+r;
-            count++;
+            
         }
+        for(int i = 1; i<size; i++)
+        {
+            for(int j = 0; j<size; j++)
+            {
+                arr[i][j] = arr[i-1][j];
+            }
+            rotateRight(arr[i]);
+        }
+        return arr;
     }
     /**
         take the absoulute value of the number
@@ -78,7 +86,15 @@ public class mathy
 
     }//end of abs
 
-
+    public static void rotateRight(int[] arr)
+       {
+          int x = arr[arr.length - 1];
+          for(int i = arr.length - 1; i>0; i--)
+          {
+              arr[i] = arr[i-1];
+          }
+          arr[0] = x;
+       }
 
     /**
     *   takes the odd numbers out of an array
