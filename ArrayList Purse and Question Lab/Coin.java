@@ -14,7 +14,7 @@ public class Coin
    private int face;
    private double amount;
    private char type;
-
+   
    /**-----------------------------------------------------------------
    *  Sets up the coin by flipping it initially.
    */
@@ -22,7 +22,7 @@ public class Coin
    {
       flip();
    }
-
+   
    /**-----------------------------------------------------------------
    *  Flips the coin by randomly choosing a face value.
    */
@@ -30,10 +30,25 @@ public class Coin
    {
       face = (int) (Math.random() * 2);
    }
-
+   
+   /**------------------------------------------------------------------
+   * does stuff
+   */
+   public int getValue()
+   {
+       return 0;
+    }
+   
+   /**-------------------------------------------------------------------
+    * does more stuff
+    */ 
+   public char getType()
+   {
+       if(
+    }
    /**-----------------------------------------------------------------
    *  Returns true if the current face of the coin is heads.
-   		@return boolean, true if heads
+        @return boolean, true if heads
    */
    public boolean isHeads ()
    {
@@ -42,7 +57,7 @@ public class Coin
 
    /**-----------------------------------------------------------------
    *  Returns the current face of the coin as a string.
-   		@return String
+        @return String
    */
    public String toString()
    {
