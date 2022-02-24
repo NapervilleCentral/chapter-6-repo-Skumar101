@@ -33,7 +33,6 @@ public class Coin
        type = Type;
        flip();
    }
-   
    /**-----------------------------------------------------------------
    *  Flips the coin by randomly choosing a face value.
    */

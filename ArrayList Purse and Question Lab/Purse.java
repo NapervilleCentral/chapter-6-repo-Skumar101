@@ -4,11 +4,12 @@ import java.util.ArrayList;
 public class Purse
 {
     //private ArrayList
-    private ArrayList change;
+    private ArrayList <Coin> change;
         public Purse (int p, int n, int d, int q)
         {
             while(p>0)
-                {change.add(new Coin('p'));
+                {
+                 change.add(new Coin('p'));
                  p--;
                 }
             while(n>0)
@@ -37,18 +38,22 @@ public class Purse
     {
         change.add(acoin);
     }
-
+    public void remove(Coin acoin)
+    {
+        change.remove(acoin);
+    }
   /** Returns the total value of the coins in the array
   *                 list change
         @return ???
   */
     public double getTotal()
     {
+        int total = 0;
+        for(int i = 0; i<change.size(); i++)
+            total+=change.get(i).getValue();
+        return total;
 
-
-		return 0;
-
-	}
+    }
 
 
 
@@ -58,7 +63,11 @@ public class Purse
 
    public String toString()
    {
-      return " --";
+       String data="";
+       for(int i = 0; i<change.size(); i++)
+        data+=change.get(i)+"\n";
+       data+="Total: "+getTotal();
+       return data;
    }
 
 }
