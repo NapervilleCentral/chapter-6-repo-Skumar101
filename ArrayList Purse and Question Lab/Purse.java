@@ -1,27 +1,32 @@
 
 import java.util.ArrayList;
-
+import java.lang.Math;
 public class Purse
 {
     //private ArrayList
-    private ArrayList <Coin> change;
+    private ArrayList <Coin> change = new ArrayList<>();
         public Purse (int p, int n, int d, int q)
         {
             while(p>0)
                 {
-                 change.add(new Coin('p'));
+                 Coin coin = new Coin('p');
+                 change.add(coin);
                  p--;
                 }
             while(n>0)
-                {change.add(new Coin('n'));
+                {
+                 Coin coin = new Coin('n');
+                 change.add(coin);
                  n--;
                 }
             while(d>0)
-                {change.add(new Coin('d'));
+                {Coin coin = new Coin('d');
+                 change.add(coin);
                  d--;
                 }
             while(q>0)
-                {change.add(new Coin('q'));
+                {Coin coin = new Coin('q');
+                 change.add(coin);
                  q--;
                 }
         }
@@ -36,11 +41,24 @@ public class Purse
         */
     public void add (Coin acoin)
     {
+        int i = 0;
         change.add(acoin);
+        if(change.size()==0)
+            change.add(acoin);
+        else
+            while (i<change.size() && acoin.getValue() > change.get(i).getValue())
+                {
+                    i++;
+                    change.add(i, acoin);
+                }
     }
-    public void remove(Coin acoin)
+    public void remove(char type)
     {
-        change.remove(acoin);
+        for(int i = 0; i<change.size(); i++)
+            if(change.get(i).getType() == type)
+                {change.remove(change.get(i));
+                 break;}
+                 
     }
   /** Returns the total value of the coins in the array
   *                 list change
@@ -48,7 +66,7 @@ public class Purse
   */
     public double getTotal()
     {
-        int total = 0;
+        double total = 0;
         for(int i = 0; i<change.size(); i++)
             total+=change.get(i).getValue();
         return total;
@@ -63,9 +81,24 @@ public class Purse
 
    public String toString()
    {
+       int p = 0;
+       int n = 0;
+       int d = 0;
+       int q = 0;
        String data="";
        for(int i = 0; i<change.size(); i++)
-        data+=change.get(i)+"\n";
+        if(change.get(i).getType()=='p')
+            p++;
+        else if(change.get(i).getType()=='n')
+            n++;
+        else if(change.get(i).getType()=='d')
+            d++;
+        else if(change.get(i).getType()=='q')
+            q++;   
+       data+= p+" Pennies\n";
+       data+= n+" Nickels\n";
+       data+= d+" Dimes\n";
+       data+= q+" Quarters\n";
        data+="Total: "+getTotal();
        return data;
    }
