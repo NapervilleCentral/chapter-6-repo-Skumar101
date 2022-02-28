@@ -1,6 +1,4 @@
-
 import java.util.ArrayList;
-import java.lang.Math;
 public class Purse
 {
     //private ArrayList
@@ -99,7 +97,7 @@ public class Purse
        data+= n+" Nickels\n";
        data+= d+" Dimes\n";
        data+= q+" Quarters\n";
-       data+="Total: "+getTotal();
+       data+="Total: $"+getTotal();
        return data;
    }
 
