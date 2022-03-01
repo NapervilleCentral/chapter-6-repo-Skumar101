@@ -42,7 +42,7 @@ public class Coin
    }
    
    /**------------------------------------------------------------------
-   * does stuff
+   * @return Double value of coin
    */
    public double getValue()
    {
@@ -50,7 +50,7 @@ public class Coin
     }
    
    /**-------------------------------------------------------------------
-    * does more stuff
+    * @return type of coin object is
     */ 
    public char getType()
    {

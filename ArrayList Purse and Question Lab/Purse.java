@@ -3,7 +3,7 @@ public class Purse
 {
     //private ArrayList
     private ArrayList <Coin> change = new ArrayList<>();
-        public Purse (int p, int n, int d, int q)
+        public Purse (int p, int n, int d, int q)//easier to start if can set all main values in the beginning
         {
             while(p>0)
                 {
@@ -29,7 +29,7 @@ public class Purse
                 }
         }
         
-        public Purse (Coin acoin)
+        public Purse (Coin acoin)//constructor to just add a new coin right away
         {
             change.add(acoin);
         }
@@ -41,7 +41,7 @@ public class Purse
     {
         int i = 0;
         change.add(acoin);
-        if(change.size()==0)
+        if(change.size()==0)//sort to make it in order of value
             change.add(acoin);
         else
             while (i<change.size() && acoin.getValue() > change.get(i).getValue())
@@ -50,9 +50,9 @@ public class Purse
                     change.add(i, acoin);
                 }
     }
-    public void remove(char type)
+    public void remove(char type)//removes using the type since using a coin can't work
     {
-        for(int i = 0; i<change.size(); i++)
+        for(int i = 0; i<change.size(); i++)//
             if(change.get(i).getType() == type)
                 {change.remove(change.get(i));
                  break;}
@@ -60,7 +60,7 @@ public class Purse
     }
   /** Returns the total value of the coins in the array
   *                 list change
-        @return ???
+        @return total of all the coin values in the purse
   */
     public double getTotal()
     {

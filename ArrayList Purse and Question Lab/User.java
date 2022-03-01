@@ -15,7 +15,7 @@ public class User
     
     Purse purse = new Purse(p ,n ,d, q);
     int choice = 0;
-    while(choice!=3)
+    while(choice!=3)//simple menu
     {System.out.println("Menu:");
     System.out.println("1. Add");
     System.out.println("2. Remove");

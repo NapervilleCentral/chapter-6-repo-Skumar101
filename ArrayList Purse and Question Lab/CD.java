@@ -44,7 +44,11 @@ public class CD
    @return int - the hash Code
    
    */
-
+    public int hashCode(CD cd)
+    {
+        
+        return 17*cd.tracks;
+    }
    //-----------------------------------------------------------------
    //  Returns a description of this CD.
    //-----------------------------------------------------------------

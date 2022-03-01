@@ -31,13 +31,19 @@ public class CDCollectionHashTest
 
     // place the cd's in the new hash table playlist
     //do not worry about collisions, that is someone elses problem
-
+    CD[] bd = new CD[db.length*2];
+    for(CD cd : db)
+    {
+        bd[cd.hashCode()%bd.length] = cd;
+    }
 
     //displays the entire hash table
     //of CD's "Artist"--"CD"--"Number of Tracks"
-
-
-
+    
+    for(CD cd : bd)
+    {
+        System.out.println(cd);
+    }
 
   }
 }
