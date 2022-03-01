@@ -47,7 +47,7 @@ public class CD
     public int hashCode(CD cd)
     {
         
-        return 17*cd.tracks;
+        return 17*cd.tracks*cd.title.length()*cd.artist.length()*(int)cd.cost*(int)cd.rating;
     }
    //-----------------------------------------------------------------
    //  Returns a description of this CD.
